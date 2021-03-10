@@ -10,7 +10,7 @@ class CheckoutSpec extends AnyWordSpec with should.Matchers{
     "return £0.00 for an empty basket" in {
       val result = checkout.checkout(List())
 
-      result should be(0)
+      result should be("£0.00")
     }
 
     "return £0.60 for a basket containing only an apple" in {
@@ -38,7 +38,7 @@ class CheckoutSpec extends AnyWordSpec with should.Matchers{
     }
 
     "return £0.50 for a basket containing two oranges" in {
-      val result = checkout.checkout(List("Apple", "Apple"))
+      val result = checkout.checkout(List("Orange", "Orange"))
 
       result should be("£0.50")
     }
